@@ -1,0 +1,209 @@
+/* =========================
+   Core scroll / layout fixes
+   ========================= */
+:root{
+  --nav-offset: 84px; /* JS updates this automatically based on navbar height */
+}
+
+html{
+  scroll-padding-top: var(--nav-offset);
+}
+
+body{
+  position: relative; /* required for ScrollSpy */
+}
+
+header, section{
+  scroll-margin-top: var(--nav-offset);
+}
+
+section{
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+/* Short sections can confuse ScrollSpy when content is tiny */
+section#about,
+section#education,
+section#skills,
+section#contact{
+  min-block-size: 40vh;
+}
+
+/* =========================
+   Navbar active link styling
+   ========================= */
+#mainNav .nav-link{
+  position: relative;
+  opacity: .85;
+}
+
+#mainNav .nav-link.active{
+  opacity: 1;
+  font-weight: 600;
+}
+
+#mainNav .nav-link.active::after{
+  content: "";
+  position: absolute;
+  left: .6rem;
+  right: .6rem;
+  bottom: .25rem;
+  height: 2px;
+  background: currentColor;
+  border-radius: 999px;
+}
+
+/* =========================
+   Hero (simple)
+   ========================= */
+.hero-simple{
+  background: linear-gradient(135deg, rgba(13,110,253,.10), rgba(25,135,84,.10));
+}
+/* Reuse the hero-style background for selected sections */
+.alt-bg{
+  background: linear-gradient(135deg, rgba(13,110,253,.10), rgba(25,135,84,.10));
+  border-top: 1px solid rgba(0,0,0,.06);
+  border-bottom: 1px solid rgba(0,0,0,.06);
+}
+
+
+/* Circular profile image */
+.profile-img{
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid rgba(255,255,255,.18);
+  box-shadow: 0 12px 30px rgba(0,0,0,.22);
+}
+
+/* =========================
+   Projects
+   ========================= */
+.project-block{
+  padding: .5rem;
+}
+
+.project-block img{
+  background: rgba(0,0,0,.04);
+}
+
+/* =========================
+   Back-to-top button
+   ========================= */
+.back-to-top-btn{
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 999px;
+  background: rgba(255,255,255,.95);
+  color: rgba(0,0,0,.75);
+  display: none;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 0 10px 28px rgba(0,0,0,.12);
+  z-index: 1080;
+  transition: transform .12s ease, background .12s ease, color .12s ease;
+}
+
+.back-to-top-btn:hover{
+  transform: translateY(-2px);
+  background: rgba(255,255,255,1);
+  color: rgba(0,0,0,.9);
+}
+
+.back-to-top-btn:active{
+  transform: translateY(0);
+}
+
+/* Education divider */
+.edu-divider{
+  margin: 1.75rem 0 1.5rem;
+  border: 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255,255,255,.25),
+    transparent
+  );
+}
+
+/* Project images */
+.project-img{
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* Mobile screenshots should not dominate */
+.mobile-img{
+  max-height: 300px;
+  object-fit: contain;
+  margin-inline: auto;
+  display: block;
+}
+
+/* Hobbies & Interests pills (dark theme friendly) */
+.hobby-pill{
+  display: inline-block;
+  padding: .4rem .75rem;
+  margin-right: .4rem;
+  margin-bottom: .4rem;
+  font-size: .85rem;
+  font-weight: 500;
+  color: #e9f1ff;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 999px;
+  letter-spacing: .2px;
+}
+
+.hobby-pill:hover{
+  background: rgba(255,255,255,.14);
+}
+
+/* Contact section: improve contrast on dark theme */
+#contact .contact-panel{
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 14px;
+  padding: 1.25rem;
+  box-shadow: 0 16px 40px rgba(0,0,0,.25);
+}
+
+/* Contact form inputs – white fields on dark card */
+#contact .form-control{
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,.15);
+  color: #212529;
+}
+
+/* Placeholder text */
+#contact .form-control::placeholder{
+  color: #6c757d;
+}
+
+/* Focus state */
+#contact .form-control:focus{
+  background: #ffffff;
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 .2rem rgba(13,110,253,.25);
+  color: #212529;
+}
+
+/* Validation states still visible */
+#contact .form-control.is-invalid,
+#contact .form-control:invalid{
+  border-color: #dc3545;
+}
+
+
+/* Make labels a bit clearer */
+#contact label{
+  color: rgba(255,255,255,.85);
+}

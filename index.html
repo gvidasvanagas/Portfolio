@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Your Name — Portfolio</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+  </head>
+
+  <body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-smooth-scroll="true" tabindex="0">
+
+    <!-- NAVBAR -->
+    <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+      <div class="container">
+        <a class="navbar-brand fw-semibold" href="#home">Gvidas Vanagas</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navLinks"
+          aria-controls="navLinks" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navLinks">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+            <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+            <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+            <li class="nav-item"><a class="nav-link" href="#interests">Interests</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          </ul>
+
+          <div class="d-flex gap-2 ms-lg-3 mt-3 mt-lg-0">
+            
+            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#contactModal">Contact Modal</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    
+<header id="home" class="hero-simple">
+  <div class="container py-5 text-center">
+
+    <img src="images/profile.jpg" alt="Profile photo" class="profile-img mb-3">
+
+    <h1 class="display-4 fw-bold mb-2">Gvidas Vanagas</h1>
+    <p class="lead mb-2">Software Development Student</p>
+    <a href="#projects" class="btn btn-primary">View Projects</a>
+
+  </div>
+</header>
+
+
+
+    <!-- ABOUT -->
+    
+<section id="about" class="container py-5">
+  <h2 class="fw-bold mb-3">About Me</h2>
+  <p class="mb-0">
+    I am a final-year Computing with Software Development student at TU Dublin.
+    I am a motivated student with strong problem-solving skills, aiming to pursue opportunities in the IT field.
+    Through my studies and personal projects, I have gained experience with a range of programming languages, technologies, frameworks and data analysis.
+    I am keen to continue learning and contribute to an organisation using my technical and teamwork skills.
+  </p>
+  <p class="mt-3"></p>
+</section>
+
+
+    <!-- EDUCATION -->
+    
+<section id="education" class="alt-bg">
+  <div class="container py-5">
+    <h2 class="fw-bold mb-3">Education</h2>
+    <p class="mb-1"><strong>Course:</strong> BSc (Hons) in Computing with Software Development</p>
+    <p class="mb-1"><strong>Institution:</strong> Technological University Dublin</p>
+    <p class="mb-0"><strong>Year:</strong> 2022 – Present</p>
+    <hr class="edu-divider">
+
+    <div class="btn-group mb-4" role="group" aria-label="Year filters">
+      <button type="button" class="btn btn-outline-primary year-btn active" data-year="1">Year 1</button>
+      <button type="button" class="btn btn-outline-primary year-btn" data-year="2">Year 2</button>
+      <button type="button" class="btn btn-outline-primary year-btn" data-year="3">Year 3</button>
+      <button type="button" class="btn btn-outline-primary year-btn" data-year="4">Year 4</button>
+    </div>
+
+    <!-- Year title -->
+    <p class="text-body-secondary mb-3">
+      <strong id="eduYearLabel">First Year Models</strong>
+    </p>
+
+    <!-- Semesters side-by-side -->
+    <div class="row g-4">
+      <div class="col-md-6" id="sem1Col">
+        <div class="p-3 rounded-3 bg-body">
+          <h3 class="h6 fw-semibold mb-3">Semester 1</h3>
+          <div class="table-responsive">
+            <table class="table table-sm align-middle mb-0">
+              <thead>
+                <tr>
+                  <th>Module</th>
+                  <th class="text-end">Grade</th>
+                </tr>
+              </thead>
+              <tbody id="sem1Body"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6" id="sem2Col">
+        <div class="p-3 rounded-3 bg-body">
+          <h3 class="h6 fw-semibold mb-3">Semester 2</h3>
+          <div class="table-responsive">
+            <table class="table table-sm align-middle mb-0">
+              <thead>
+                <tr>
+                  <th>Module</th>
+                  <th class="text-end">Grade</th>
+                </tr>
+              </thead>
+              <tbody id="sem2Body"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- PROJECTS -->
+    
+<section id="projects" class="container py-5">
+  <h2 class="fw-bold mb-4">Projects</h2>
+
+  <div class="row g-4">
+    <div class="col-md-6">
+      <div class="project-block">
+        <h3 class="h5">CS2 Skins Explorer</h3>
+        <img src="images/project1.png" alt="Project one screenshot" class="project-img">
+        <p class="text-body-secondary mt-3">
+          Simple blazer app that uses a public CS2 skins API to show in-game skins, let the user search them, mark favourites, 
+          and generate a random skin. 
+        </p>
+        <div class="d-flex gap-2">
+          <a href="https://gvidasvanagas.github.io/Cs2SkinsApp/" class="btn btn-sm btn-outline-primary" target="_blank">Live</a>
+          <a href="https://github.com/gvidasvanagas/Cs2SkinsApp" class="btn btn-sm btn-outline-secondary" target="_blank">Code</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="project-block">
+        <h3 class="h5">Fitness Buddy</h3>
+        <img src="images/project2.jfif" alt="Project two screenshot" class="project-img mobile-img">
+        <p class="text-body-secondary mt-3">
+          Fitness Buddy is a mobile app designed to plan and track workouts so that users can easily monitor their progress. 
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="alt-bg">
+      <div class="container py-5">
+        <div class="section-head mb-3">
+          <h2 class="fw-bold mb-1">Work Experience</h2>
+        </div>
+
+        <div class="accordion shadow-sm" id="expAcc">
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#job1"
+                aria-expanded="true" aria-controls="job1">
+                Sales Assistant — Dunnes Stores
+              </button>
+            </h3>
+            <div id="job1" class="accordion-collapse collapse show" data-bs-parent="#expAcc">
+              <div class="accordion-body">
+                <ul class="mb-0">
+                  <li>Provided excellent customer service to support the daily operations of the retail environment</li>
+                  <li>Collaborated with colleagues to maintain a well-organised and presentable sales floor</li>
+                  <li>Operated the cash register and handled transactions accurately, including cash, card payments, and refunds</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#job2"
+                aria-expanded="false" aria-controls="job2">
+                Warehouse Picker — Musgrave
+              </button>
+            </h3>
+            <div id="job2" class="accordion-collapse collapse" data-bs-parent="#expAcc">
+              <div class="accordion-body">
+                <ul class="mb-0">
+                    <li>Accurately picked and packed products for shipment to meet order requirements</li>
+                    <li>Maintained inventory accuracy through careful handling and organisation of stock</li>
+                    <li>Contributed to a safe and well-organised warehouse environment</li>
+                    <li>Operated warehouse equipment, including forklifts, in accordance with safety procedures</li>
+                    <li>Worked efficiently to meet daily targets and deadlines</li>
+                  </ul>
+                </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#job3"
+                aria-expanded="false" aria-controls="job3">
+                Courier — UPS
+              </button>
+            </h3>
+            <div id="job3" class="accordion-collapse collapse" data-bs-parent="#expAcc">
+              <div class="accordion-body">
+                <ul class="mb-0">
+                    <li>Used problem-solving skills to plan efficient delivery routes throughout the day</li>
+                    <li>Addressed and resolved issues quickly to ensure timely and accurate deliveries</li>
+                    <li>Ensured high delivery quality while handling customer interactions</li>
+                  </ul>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+<section id="skills">
+  <div class="container py-5">
+    <h2 class="fw-bold mb-4">Skills</h2>
+
+    <div class="row g-4">
+
+      <!-- Technical Skills -->
+      <div class="col-md-6">
+        <h3 class="h5 fw-semibold mb-3">Technical Skills</h3>
+
+        <h4 class="h6 fw-semibold">Programming Languages</h4>
+        <p>
+          C++, C#, Java and Python.
+        </p>
+
+        <h4 class="h6 fw-semibold">Web Development</h4>
+        <p>
+          HTML, CSS, JavaScript, Django and Bootstrap.
+        </p>
+
+        <h4 class="h6 fw-semibold">Mobile Development</h4>
+        <p>
+          React Native, NativeWind and Tailwind CSS. 
+        </p>
+
+        <h4 class="h6 fw-semibold">Databases</h4>
+        <p>
+          Able to design and create database schemas, administer Oracle database servers using Enterprise Manager, 
+          and work with SQL for querying and managing data.
+        </p>
+
+        <h4 class="h6 fw-semibold">Data Analysis & Machine Learning</h4>
+        <p>
+          Experience in data preparation and analysis using Python and Microsoft Excel. 
+          Familiar with applied machine learning concepts and data visualisation techniques.
+        </p>
+
+        <h4 class="h6 fw-semibold">Networking & Systems</h4>
+        <p>
+          Experience designing, building, and troubleshooting networks using routers and hubs. 
+          Able to configure routers using the Cisco IOS command set and perform basic system administration on Windows and Linux.
+        </p>
+
+        <h4 class="h6 fw-semibold">Cloud & Tools</h4>
+        <p>
+          Experience using cloud environments such as Microsoft Azure. 
+          Familiar with version control using Git and GitHub.
+          AWS Practitioner Certified.
+        </p>
+      </div>
+
+      <!-- Soft Skills -->
+      <div class="col-md-6">
+        <h3 class="h5 fw-semibold mb-3">Soft Skills</h3>
+
+        <p>
+          Strong problem-solving and analytical skills developed through academic projects and real-world work experience.
+        </p>
+        <p>
+          Effective communication skills, both written and verbal, with experience dealing directly with customers and team members.
+        </p>
+        <p>
+          Proven ability to work independently as well as part of a team, contributing positively in collaborative environments.
+        </p>
+        <p>
+          Strong time management and organisational skills, with the ability to prioritise tasks and meet deadlines.
+        </p>
+        <p>
+          Adaptable and motivated learner, willing to take on new challenges and learn new technologies.
+        </p>
+        <p>
+          Detail-oriented approach to work, ensuring accuracy and consistency across tasks.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+    <!-- INTERESTS -->
+    <section id="interests" class="alt-bg">
+      <div class="container py-5">
+        <div class="section-head mb-3">
+          <h2 class="fw-bold mb-1">Hobbies & Interests</h2>
+        </div>
+
+        <div class="d-flex flex-wrap gap-2">
+          <span class="hobby-pill">Gym</span>
+          <span class="hobby-pill">Gaming</span>
+          <span class="hobby-pill">Travel</span>
+          <span class="hobby-pill">Freestyle Wrestling</span>
+          <span class="hobby-pill">Hiking</span>
+          <span class="hobby-pill">Nature</span>
+          <span class="hobby-pill">Basketball</span>
+          <span class="hobby-pill">Volleyball</span>
+          <span class="hobby-pill">Beach</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="container py-5">
+      <div class="section-head mb-3">
+        <h2 class="fw-bold mb-1">Contact Me</h2>
+        <p class="text-body-secondary mb-0">Form validation + toast feedback (demo).</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <form id="contactForm" class="card contact-panel p-3 needs-validation" novalidate>
+            <div class="mb-3">
+              <label class="form-label" for="name">Name</label>
+              <input class="form-control" id="name" required>
+              <div class="invalid-feedback">Please enter your name.</div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label" for="email">Email</label>
+              <input class="form-control" id="email" type="email" required>
+              <div class="invalid-feedback">Please enter a valid email.</div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label" for="msg">Message</label>
+              <textarea class="form-control" id="msg" rows="4" required></textarea>
+              <div class="invalid-feedback">Please enter a message.</div>
+            </div>
+
+            <div class="d-flex flex-wrap gap-2 align-items-center">
+              <button class="btn btn-primary" type="submit">Send</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="card contact-panel">
+            <div class="card-body">
+              <h3 class="h6 fw-semibold mb-3">Details</h3>
+              <p class="mb-1"><strong>Email:</strong> gvidas.vanagas@gmail.com</p>
+              <p class="mb-1"><strong>LinkedIn:</strong> <a href="https://ie.linkedin.com/in/gvidas-vanagas">LinkedIn</a> </p>
+              <p class="mb-0"><strong>GitHub:</strong> <a href="https://github.com/gvidasvanagas">GitHub</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-white">
+      <div class="container py-4 d-flex flex-wrap justify-content-between gap-2">
+        <span>© <span id="year"></span> Gvidas Vanagas</span>
+        <a class="text-white-50" href="report.html">Components & Features Report</a>
+      </div>
+    </footer>
+
+    <!-- MODAL (required) -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Contact Info</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p class="mb-2"><strong>Email:</strong> gvidas.vanagas@gmail.com</p>
+            <p class="mb-2"><strong>LinkedIn:</strong> <a href="https://ie.linkedin.com/in/gvidas-vanagas">LinkedIn</a></p>
+            <p class="mb-0"><strong>GitHub:</strong> <a href="https://github.com/gvidasvanagas">GitHub</a></p>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TOAST -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+      <div id="sentToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+          <strong class="me-auto">Message</strong>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">Your message has been validated locally (demo).</div>
+      </div>
+    </div>
+
+    <!-- Back to top -->
+    <button id="backToTop" class="back-to-top-btn" type="button" aria-label="Back to top"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1-.708.708L8 5.707 4.354 9.354a.5.5 0 1 1-.708-.708l4-4z"/>
+</svg></button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="scripts/myScripts.js"></script>
+  </body>
+</html>
